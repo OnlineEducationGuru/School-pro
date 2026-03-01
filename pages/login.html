@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>લોગિન - Online Education Guru</title>
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/auth.css">
+</head>
+<body>
+    <!-- Header -->
+    <header id="mainHeader">
+        <div class="container">
+            <div class="logo-container">
+                <img src="../images/logo.png" alt="Online Education Guru Logo" class="logo">
+                <h1 class="site-title">Online Education Guru</h1>
+            </div>
+            <nav class="main-nav">
+                <button class="nav-toggle" id="navToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="../index.html" class="nav-link">હોમ</a></li>
+                    <li><a href="about.html" class="nav-link">અમારા વિશે</a></li>
+                    <li><a href="contact.html" class="nav-link">સંપર્ક</a></li>
+                    <li><a href="register.html" class="nav-link">રજિસ્ટ્રેશન</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="auth-main">
+        <div class="container">
+            <div class="auth-container">
+                <div class="auth-card">
+                    <h2 class="auth-title">લોગિન</h2>
+                    <p class="auth-subtitle">તમારા એકાઉન્ટમાં પ્રવેશ કરો</p>
+
+                    <!-- User Type Selection -->
+                    <div class="user-type-selector">
+                        <button class="type-btn active" data-type="student" onclick="selectUserType('student')">
+                            👨‍🎓 વિદ્યાર્થી
+                        </button>
+                        <button class="type-btn" data-type="teacher" onclick="selectUserType('teacher')">
+                            👨‍🏫 શિક્ષક
+                        </button>
+                    </div>
+
+                    <!-- Login Form -->
+                    <form id="loginForm" class="auth-form">
+                        <input type="hidden" id="userType" value="student">
+
+                        <div class="form-group">
+                            <label for="mobile">મોબાઈલ નંબર *</label>
+                            <input type="tel" id="mobile" name="mobile" class="form-input" 
+                                   placeholder="મોબાઈલ નંબર દાખલ કરો" maxlength="10" required>
+                            <span class="error-text" id="mobileError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <button type="submit" class="btn-primary btn-block" id="loginBtn">
+                                <span class="btn-text">લોગિન કરો</span>
+                                <span class="btn-loader" style="display: none;">⏳</span>
+                            </button>
+                        </div>
+
+                        <div class="form-footer">
+                            <p>એકાઉન્ટ નથી? <a href="register.html">રજિસ્ટર કરો</a></p>
+                        </div>
+                    </form>
+
+                    <!-- Message Display -->
+                    <div id="messageContainer"></div>
+                </div>
+
+                <!-- Info Section -->
+                <div class="auth-info">
+                    <div class="info-card">
+                        <h3>👨‍🎓 વિદ્યાર્થીઓ માટે</h3>
+                        <ul>
+                            <li>✓ ઓનલાઈન Quiz આપો</li>
+                            <li>✓ તમારા સ્કોર જુઓ</li>
+                            <li>✓ સર્ટિફિકેટ મેળવો</li>
+                            <li>✓ Leaderboard માં સ્થાન જુઓ</li>
+                        </ul>
+                    </div>
+                    <div class="info-card">
+                        <h3>👨‍🏫 શિક્ષકો માટે</h3>
+                        <ul>
+                            <li>✓ શૈક્ષણિક સાધનો મેળવો</li>
+                            <li>✓ ટેસ્ટ પેપર ડાઉનલોડ કરો</li>
+                            <li>✓ વિદ્યાર્થીઓના પરિણામ જુઓ</li>
+                            <li>✓ સંસાધનો શેર કરો</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer id="mainFooter">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Online Education Guru</h4>
+                    <p>ગુજરાત શિક્ષણ માટે સંપૂર્ણ ડિજિટલ સમાધાન</p>
+                </div>
+                <div class="footer-section">
+                    <h4>લિંક્સ</h4>
+                    <ul>
+                        <li><a href="about.html">અમારા વિશે</a></li>
+                        <li><a href="contact.html">સંપર્ક</a></li>
+                        <li><a href="privacy.html">પ્રાઇવસી પોલિસી</a></li>
+                        <li><a href="terms.html">ટર્મ્સ ઓફ સર્વિસ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Online Education Guru. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../js/config.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/auth.js"></script>
+</body>
+</html>

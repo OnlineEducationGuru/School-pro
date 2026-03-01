@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>સંપર્ક - Online Education Guru</title>
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/pages.css">
+</head>
+<body>
+    <!-- Header -->
+    <header id="mainHeader">
+        <div class="container">
+            <div class="logo-container">
+                <img src="../images/logo.png" alt="Online Education Guru Logo" class="logo">
+                <h1 class="site-title">Online Education Guru</h1>
+            </div>
+            <nav class="main-nav">
+                <button class="nav-toggle" id="navToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="../index.html" class="nav-link">હોમ</a></li>
+                    <li><a href="about.html" class="nav-link">અમારા વિશે</a></li>
+                    <li><a href="contact.html" class="nav-link active">સંપર્ક</a></li>
+                    <li><a href="login.html" class="nav-link">લોગિન</a></li>
+                    <li><a href="register.html" class="nav-link">રજિસ્ટ્રેશન</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="page-content">
+        <div class="container">
+            <div class="page-header">
+                <h1 class="page-title">અમારો સંપર્ક કરો</h1>
+                <p class="page-subtitle">અમે તમારી મદદ માટે હંમેશા તૈયાર છીએ</p>
+            </div>
+
+            <div class="contact-container">
+                <!-- Contact Form -->
+                <div class="contact-form-section">
+                    <div class="content-card">
+                        <h2>📧 સંદેશ મોકલો</h2>
+                        <form id="contactForm" class="contact-form">
+                            <div class="form-group">
+                                <label for="name">નામ *</label>
+                                <input type="text" id="name" name="name" class="form-input" 
+                                       placeholder="તમારું નામ" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">ઈમેલ *</label>
+                                <input type="email" id="email" name="email" class="form-input" 
+                                       placeholder="example@gmail.com" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="mobile">મોબાઈલ નંબર *</label>
+                                <input type="tel" id="mobile" name="mobile" class="form-input" 
+                                       placeholder="મોબાઈલ નંબર" maxlength="10" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="subject">વિષય *</label>
+                                <select id="subject" name="subject" class="form-input" required>
+                                    <option value="">વિષય પસંદ કરો</option>
+                                    <option value="general">સામાન્ય પૂછપરછ</option>
+                                    <option value="technical">ટેક્નિકલ સમસ્યા</option>
+                                    <option value="content">સામગ્રી સંબંધિત</option>
+                                    <option value="suggestion">સૂચન</option>
+                                    <option value="complaint">ફરિયાદ</option>
+                                    <option value="other">અન્ય</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">સંદેશ *</label>
+                                <textarea id="message" name="message" class="form-input" 
+                                          placeholder="તમારો સંદેશ લખો..." rows="5" required></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <button type="submit" class="btn-primary btn-block">
+                                    <span class="btn-text">સંદેશ મોકલો</span>
+                                    <span class="btn-loader" style="display: none;">⏳</span>
+                                </button>
+                            </div>
+                        </form>
+                        <div id="formMessage"></div>
+                    </div>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="contact-info-section">
+                    <div class="content-card">
+                        <h2>📞 સંપર્ક માહિતી</h2>
+                        <div class="contact-info-list">
+                            <div class="contact-info-item">
+                                <div class="contact-icon">📧</div>
+                                <div class="contact-details">
+                                    <h3>ઈમેલ</h3>
+                                    <p>info@onlineeducationguru.com</p>
+                                    <p>support@onlineeducationguru.com</p>
+                                </div>
+                            </div>
+
+                            <div class="contact-info-item">
+                                <div class="contact-icon">📱</div>
+                                <div class="contact-details">
+                                    <h3>મોબાઈલ</h3>
+                                    <p>+91 XXXXXXXXXX</p>
+                                    <p>સોમવારથી શનિવાર: 9:00 AM - 6:00 PM</p>
+                                </div>
+                            </div>
+
+                            <div class="contact-info-item">
+                                <div class="contact-icon">📍</div>
+                                <div class="contact-details">
+                                    <h3>સરનામું</h3>
+                                    <p>Online Education Guru</p>
+                                    <p>ગુજરાત, ભારત</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content-card">
+                        <h2>🌐 સોશિયલ મીડિયા</h2>
+                        <div class="social-links">
+                            <a href="#" class="social-link">
+                                <span class="social-icon">📘</span>
+                                <span>Facebook</span>
+                            </a>
+                            <a href="#" class="social-link">
+                                <span class="social-icon">📸</span>
+                                <span>Instagram</span>
+                            </a>
+                            <a href="#" class="social-link">
+                                <span class="social-icon">🐦</span>
+                                <span>Twitter</span>
+                            </a>
+                            <a href="#" class="social-link">
+                                <span class="social-icon">📺</span>
+                                <span>YouTube</span>
+                            </a>
+                            <a href="#" class="social-link">
+                                <span class="social-icon">💬</span>
+                                <span>WhatsApp</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="content-card">
+                        <h2>⏰ કામકાજના કલાકો</h2>
+                        <div class="hours-list">
+                            <div class="hours-item">
+                                <span>સોમવાર - શુક્રવાર</span>
+                                <span>9:00 AM - 6:00 PM</span>
+                            </div>
+                            <div class="hours-item">
+                                <span>શનિવાર</span>
+                                <span>10:00 AM - 4:00 PM</span>
+                            </div>
+                            <div class="hours-item">
+                                <span>રવિવાર</span>
+                                <span>બંધ</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ Section -->
+            <div class="content-section">
+                <div class="content-card">
+                    <h2>❓ વારંવાર પૂછાતા પ્રશ્નો (FAQ)</h2>
+                    <div class="faq-list">
+                        <div class="faq-item">
+                            <h3>Q: Online Education Guru વાપરવા માટે કોઈ ફી છે?</h3>
+                            <p>A: ના, અમારી તમામ સેવાઓ સંપૂર્ણપણે મફત છે.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h3>Q: Quiz સર્ટિફિકેટ કેવી રીતે મેળવી શકાય?</h3>
+                            <p>A: Quiz પૂર્ણ કર્યા પછી તમને આપોઆપ સર્ટિફિકેટ મળશે જે તમે PDF અને PNG માં ડાઉનલોડ કરી શકશો.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h3>Q: શું હું શિક્ષક અને વિદ્યાર્થી બંને તરીકે રજિસ્ટર કરી શકું?</h3>
+                            <p>A: હા, તમે અલગ-અલગ મોબાઈલ નંબર સાથે બંને એકાઉન્ટ બનાવી શકો છો.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h3>Q: સામગ્રી કેટલી વાર અપડેટ થાય છે?</h3>
+                            <p>A: અમે નિયમિતપણે નવી સામગ્રી અને ફીચર્સ ઉમેરીએ છીએ.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer id="mainFooter">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Online Education Guru</h4>
+                    <p>ગુજરાત શિક્ષણ માટે સંપૂર્ણ ડિજિટલ સમાધાન</p>
+                </div>
+                <div class="footer-section">
+                    <h4>લિંક્સ</h4>
+                    <ul>
+                        <li><a href="about.html">અમારા વિશે</a></li>
+                        <li><a href="contact.html">સંપર્ક</a></li>
+                        <li><a href="privacy.html">પ્રાઇવસી પોલિસી</a></li>
+                        <li><a href="terms.html">ટર્મ્સ ઓફ સર્વિસ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Online Education Guru. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../js/config.js"></script>
+    <script src="../js/common.js"></script>
+    <script>
+        // Contact Form Handler
+        document.getElementById('contactForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                mobile: document.getElementById('mobile').value,
+                subject: document.getElementById('subject').value,
+                message: document.getElementById('message').value
+            };
+            
+            const submitBtn = this.querySelector('button[type="submit"]');
+            submitBtn.disabled = true;
+            submitBtn.querySelector('.btn-text').style.display = 'none';
+            submitBtn.querySelector('.btn-loader').style.display = 'inline';
+            
+            // Simulate sending (implement actual API call)
+            setTimeout(() => {
+                document.getElementById('formMessage').innerHTML = 
+                    '<div class="success-message">તમારો સંદેશ સફળતાપૂર્વક મોકલાયો! અમે ટૂંક સમયમાં તમારો સંપર્ક કરીશું.</div>';
+                this.reset();
+                submitBtn.disabled = false;
+                submitBtn.querySelector('.btn-text').style.display = 'inline';
+                submitBtn.querySelector('.btn-loader').style.display = 'none';
+            }, 1500);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Online Education Guru - ગુજરાત શિક્ષણ માટે સંપૂર્ણ વેબ એપ્લિકેશન">
+    <meta name="keywords" content="Gujarat Education, Online Quiz, Teacher Tools, Students Material">
+    <title>Online Education Guru - ગુજરાત શિક્ષણ</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXX"
+     crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- Breaking News Ticker -->
+    <div class="news-ticker-container">
+        <div class="news-ticker-label">તાજા સમાચાર:</div>
+        <div class="news-ticker">
+            <div class="news-ticker-content" id="newsContent">
+                <span class="news-item">સ્વાગત છે Online Education Guru માં...</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header id="mainHeader">
+        <div class="container">
+            <div class="logo-container">
+                <img src="images/logo.png" alt="Online Education Guru Logo" class="logo" id="siteLogo">
+                <h1 class="site-title">Online Education Guru</h1>
+            </div>
+            <nav class="main-nav">
+                <button class="nav-toggle" id="navToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html" class="nav-link active">હોમ</a></li>
+                    <li><a href="pages/about.html" class="nav-link">અમારા વિશે</a></li>
+                    <li><a href="pages/contact.html" class="nav-link">સંપર્ક</a></li>
+                    <li><a href="pages/login.html" class="nav-link">લોગિન</a></li>
+                    <li><a href="pages/register.html" class="nav-link">રજિસ્ટ્રેશન</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Welcome Section -->
+            <section class="welcome-section">
+                <h2 class="section-title animate-fade-in">સ્વાગત છે Online Education Guru માં</h2>
+                <p class="section-subtitle animate-fade-in">ગુજરાત શિક્ષણ માટે સંપૂર્ણ ડિજિટલ સમાધાન</p>
+            </section>
+
+            <!-- Main Categories Grid -->
+            <section class="categories-grid">
+                <!-- Tools Section -->
+                <div class="category-row">
+                    <h3 class="row-title">📚 TOOLS</h3>
+                    <div class="cards-container">
+                        <div class="category-card animate-slide-up" onclick="navigateTo('pages/teachers-tools.html')">
+                            <div class="card-icon">👨‍🏫</div>
+                            <h4 class="card-title">Teacher's Tools</h4>
+                            <p class="card-description">શિક્ષકો માટે ઉપયોગી સાધનો</p>
+                        </div>
+                        <div class="category-card animate-slide-up" onclick="navigateTo('pages/office-tools.html')">
+                            <div class="card-icon">💼</div>
+                            <h4 class="card-title">Office Tools</h4>
+                            <p class="card-description">ઓફિસ કાર્યો માટે સાધનો</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Standards Section -->
+                <div class="category-row">
+                    <h3 class="row-title">📖 ધોરણ</h3>
+                    <div class="cards-container standards-grid">
+                        <div class="category-card animate-slide-up" onclick="navigateTo('pages/standard.html?std=balvatika')">
+                            <div class="card-icon">🎨</div>
+                            <h4 class="card-title">બાલ વાટિકા</h4>
+                        </div>
+                        <div class="category-card animate-slide-up" onclick="navigateTo('pages/standard.html?std=1')">
+                            <div class="card-icon">1️⃣</div>
+                            <h4 class="card-title">ધોરણ 1</h4>
+                        </div>
+                        <div class="category-card animate-slide-up" onclick="navigateTo('pages/standard.html?std=2')">
+                            <div class="card-icon">2️⃣</div>
+                            <h4 class="card-title">ધોરણ 2</h4>
+                        </div>
+                        <div class="category-card animate-slide-up" onclick="navigateTo('pages/standard.html?std=3')">
+                            <div class="card-icon">3️⃣</div>
+                            <h4 class="card-title">ધોરણ 3</h4>
+                        </div>
+                        <div class="category-card animate-slide-up" onclick="navigateTo('pages/standard.html?std=4')">
+                            <div class="card-icon">4️⃣</div>
+                            <h4 class="card-title">ધોરણ 4</h4>
+                        </div>
+                        <div class="category-card animate-slide-up" onclick="navigateTo('pages/standard.html?std=5')">
+                            <div class="card-icon">5️⃣</div>
+                            <h4 class="card-title">ધોરણ 5</h4>
+                        </div>
+                        <div class="category-card animate-slide-up" onclick="navigateTo('pages/standard.html?std=6')">
+                            <div class="card-icon">6️⃣</div>
+                            <h4 class="card-title">ધોરણ 6</h4>
+                        </div>
+                        <div class="category-card animate-slide-up" onclick="navigateTo('pages/standard.html?std=7')">
+                            <div class="card-icon">7️⃣</div>
+                            <h4 class="card-title">ધોરણ 7</h4>
+                        </div>
+                        <div class="category-card animate-slide-up" onclick="navigateTo('pages/standard.html?std=8')">
+                            <div class="card-icon">8️⃣</div>
+                            <h4 class="card-title">ધોરણ 8</h4>
+                        </div>
+                        <div class="category-card animate-slide-up" onclick="navigateTo('pages/standard.html?std=9')">
+                            <div class="card-icon">9️⃣</div>
+                            <h4 class="card-title">ધોરણ 9</h4>
+                        </div>
+                        <div class="category-card animate-slide-up" onclick="navigateTo('pages/standard.html?std=10')">
+                            <div class="card-icon">🔟</div>
+                            <h4 class="card-title">ધોરણ 10</h4>
+                        </div>
+                        <div class="category-card animate-slide-up" onclick="navigateTo('pages/standard.html?std=11')">
+                            <div class="card-icon">1️⃣1️⃣</div>
+                            <h4 class="card-title">ધોરણ 11</h4>
+                        </div>
+                        <div class="category-card animate-slide-up" onclick="navigateTo('pages/standard.html?std=12')">
+                            <div class="card-icon">1️⃣2️⃣</div>
+                            <h4 class="card-title">ધોરણ 12</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reading-Writing & Math Section -->
+                <div class="category-row">
+                    <h3 class="row-title">✍️ વાંચન-લેખન અને ગણન</h3>
+                    <div class="cards-container">
+                        <div class="category-card animate-slide-up" onclick="navigateTo('pages/reading-writing.html')">
+                            <div class="card-icon">📝</div>
+                            <h4 class="card-title">વાંચન-લેખન</h4>
+                            <p class="card-description">વાંચન અને લેખન સામગ્રી</p>
+                        </div>
+                        <div class="category-card animate-slide-up" onclick="navigateTo('pages/math.html')">
+                            <div class="card-icon">🔢</div>
+                            <h4 class="card-title">ગણન</h4>
+                            <p class="card-description">ગણિત અને ગણન સામગ્રી</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interactive Games Section -->
+                <div class="category-row">
+                    <h3 class="row-title">🎮 ઇન્ટરએક્ટિવ ગેમ્સ</h3>
+                    <div class="cards-container">
+                        <div class="category-card animate-slide-up" onclick="navigateTo('pages/games.html')">
+                            <div class="card-icon">🎯</div>
+                            <h4 class="card-title">શૈક્ષણિક ગેમ્સ</h4>
+                            <p class="card-description">વિષય આધારિત ઇન્ટરએક્ટિવ ગેમ્સ</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quiz Section -->
+                <div class="category-row">
+                    <h3 class="row-title">🏆 Quiz</h3>
+                    <div class="cards-container quiz-grid">
+                        <div class="category-card animate-slide-up" onclick="navigateTo('pages/quiz-standard.html')">
+                            <div class="card-icon">📚</div>
+                            <h4 class="card-title">ધોરણ વાઈઝ Quiz</h4>
+                        </div>
+                        <div class="category-card animate-slide-up" onclick="navigateTo('pages/quiz-gk.html')">
+                            <div class="card-icon">🌍</div>
+                            <h4 class="card-title">GK Quiz</h4>
+                        </div>
+                        <div class="category-card animate-slide-up" onclick="navigateTo('pages/quiz-nmms.html')">
+                            <div class="card-icon">🎓</div>
+                            <h4 class="card-title">NMMS Quiz</h4>
+                        </div>
+                        <div class="category-card animate-slide-up" onclick="navigateTo('pages/quiz-pse.html')">
+                            <div class="card-icon">📋</div>
+                            <h4 class="card-title">PSE Quiz</h4>
+                        </div>
+                        <div class="category-card animate-slide-up" onclick="navigateTo('pages/quiz-cet.html')">
+                            <div class="card-icon">📊</div>
+                            <h4 class="card-title">CET Quiz</h4>
+                        </div>
+                        <div class="category-card animate-slide-up" onclick="navigateTo('pages/quiz-gyansadhana.html')">
+                            <div class="card-icon">🧠</div>
+                            <h4 class="card-title">Gyan Sadhana Quiz</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Leaderboard Section -->
+                <div class="category-row">
+                    <h3 class="row-title">🏅 ટોપ સ્કોરર્સ</h3>
+                    <div class="leaderboard-container" id="leaderboardContainer">
+                        <div class="loading">લોડ થઈ રહ્યું છે...</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer id="mainFooter">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Online Education Guru</h4>
+                    <p>ગુજરાત શિક્ષણ માટે સંપૂર્ણ ડિજિટલ સમાધાન</p>
+                </div>
+                <div class="footer-section">
+                    <h4>લિંક્સ</h4>
+                    <ul>
+                        <li><a href="pages/about.html">અમારા વિશે</a></li>
+                        <li><a href="pages/contact.html">સંપર્ક</a></li>
+                        <li><a href="pages/privacy.html">પ્રાઇવસી પોલિસી</a></li>
+                        <li><a href="pages/terms.html">ટર્મ્સ ઓફ સર્વિસ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>સંપર્ક માહિતી</h4>
+                    <p>Email: info@onlineeducationguru.com</p>
+                    <p>Phone: +91 XXXXXXXXXX</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 favicon.ico Online Education Guru. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/config.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

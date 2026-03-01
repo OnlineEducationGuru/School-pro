@@ -1,0 +1,221 @@
+/* Admin Panel Stylesheet */
+
+.admin-login {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    padding: 20px;
+}
+
+.login-card {
+    background: var(--white);
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 400px;
+    width: 100%;
+    box-shadow: var(--shadow-lg);
+}
+
+.login-card h2 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 30px;
+    font-size: 2rem;
+}
+
+/* Admin Dashboard */
+#adminDashboard {
+    padding: 40px 0;
+    min-height: 100vh;
+    background: var(--light-color);
+}
+
+/* Tabs */
+.admin-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    background: var(--white);
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+}
+
+.tab-btn {
+    padding: 12px 24px;
+    border: none;
+    background: var(--light-color);
+    color: var(--dark-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.tab-btn:hover {
+    background: var(--primary-color);
+    color: var(--white);
+}
+
+.tab-btn.active {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--white);
+}
+
+/* Tab Content */
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+.tab-content h2 {
+    color: var(--primary-color);
+    margin-bottom: 25px;
+    font-size: 2rem;
+}
+
+/* Admin Card */
+.admin-card {
+    background: var(--white);
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 25px;
+    box-shadow: var(--shadow);
+}
+
+.admin-card h3 {
+    color: var(--dark-color);
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+/* Upload Note */
+.upload-note {
+    margin-top: 20px;
+    padding: 15px;
+    background: #fef3c7;
+    border-left: 4px solid var(--accent-color);
+    border-radius: 8px;
+}
+
+.upload-note strong {
+    color: var(--accent-color);
+}
+
+/* Config Info */
+.config-info {
+    background: var(--light-color);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.config-info p {
+    margin: 10px 0;
+    font-size: 0.95rem;
+}
+
+.config-info code {
+    background: var(--white);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-family: monospace;
+    color: var(--primary-color);
+}
+
+/* News List */
+#newsList {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.news-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background: var(--light-color);
+    border-radius: 8px;
+}
+
+.news-item-content {
+    flex: 1;
+}
+
+.news-item-title {
+    font-weight: 600;
+    color: var(--dark-color);
+    margin-bottom: 5px;
+}
+
+.news-item-link {
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+
+.news-item-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-delete {
+    background: var(--danger-color);
+    color: var(--white);
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-delete:hover {
+    background: #dc2626;
+}
+
+/* Message */
+#loginMessage {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.success-msg {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.error-msg {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .admin-tabs {
+        flex-direction: column;
+    }
+
+    .tab-btn {
+        width: 100%;
+    }
+
+    .admin-card {
+        padding: 20px;
+    }
+
+    .news-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+}

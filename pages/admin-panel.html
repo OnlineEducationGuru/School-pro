@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Online Education Guru</title>
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/admin.css">
+</head>
+<body>
+    <!-- Header -->
+    <header id="mainHeader">
+        <div class="container">
+            <div class="logo-container">
+                <img src="../images/logo.png" alt="Logo" class="logo">
+                <h1 class="site-title">Admin Panel</h1>
+            </div>
+            <nav class="main-nav">
+                <ul class="nav-menu">
+                    <li><a href="../index.html" class="nav-link">હોમ</a></li>
+                    <li><a href="#" class="nav-link" onclick="logout()">લોગઆઉટ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Login Section -->
+    <div id="loginSection" class="admin-login">
+        <div class="login-card">
+            <h2>🔐 Admin Login</h2>
+            <form id="adminLoginForm">
+                <div class="form-group">
+                    <label>Username</label>
+                    <input type="text" id="adminUsername" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" id="adminPassword" class="form-input" required>
+                </div>
+                <button type="submit" class="btn-primary btn-block">Login</button>
+            </form>
+            <div id="loginMessage"></div>
+        </div>
+    </div>
+
+    <!-- Admin Dashboard -->
+    <main id="adminDashboard" style="display: none;">
+        <div class="container">
+            <div class="admin-tabs">
+                <button class="tab-btn active" onclick="showTab('news')">Breaking News</button>
+                <button class="tab-btn" onclick="showTab('tools')">Tools Upload</button>
+                <button class="tab-btn" onclick="showTab('materials')">Materials</button>
+                <button class="tab-btn" onclick="showTab('games')">Games Upload</button>
+                <button class="tab-btn" onclick="showTab('settings')">Settings</button>
+            </div>
+
+            <!-- News Tab -->
+            <div id="newsTab" class="tab-content active">
+                <h2>Breaking News Management</h2>
+                <div class="admin-card">
+                    <h3>Add New News</h3>
+                    <form id="newsForm">
+                        <div class="form-group">
+                            <label>News Title *</label>
+                            <input type="text" id="newsTitle" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Link (Optional)</label>
+                            <input type="url" id="newsLink" class="form-input">
+                        </div>
+                        <button type="submit" class="btn-primary">Add News</button>
+                    </form>
+                </div>
+                <div class="admin-card">
+                    <h3>Active News</h3>
+                    <div id="newsList">Loading...</div>
+                </div>
+            </div>
+
+            <!-- Tools Tab -->
+            <div id="toolsTab" class="tab-content">
+                <h2>Upload Tools (HTML Files)</h2>
+                <div class="admin-card">
+                    <h3>Upload Tool</h3>
+                    <form id="toolUploadForm">
+                        <div class="form-group">
+                            <label>Tool Type *</label>
+                            <select id="toolType" class="form-input" required>
+                                <option value="teacher">Teacher's Tools</option>
+                                <option value="office">Office Tools</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Tool Name *</label>
+                            <input type="text" id="toolName" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label>HTML File *</label>
+                            <input type="file" id="toolFile" class="form-input" accept=".html" required>
+                        </div>
+                        <button type="submit" class="btn-primary">Upload Tool</button>
+                    </form>
+                    <div class="upload-note">
+                        <strong>Note:</strong> HTML file will be uploaded to tools/{type}/ folder
+                    </div>
+                </div>
+            </div>
+
+            <!-- Materials Tab -->
+            <div id="materialsTab" class="tab-content">
+                <h2>Add Study Materials</h2>
+                <div class="admin-card">
+                    <h3>Add Material</h3>
+                    <form id="materialForm">
+                        <div class="form-group">
+                            <label>Standard *</label>
+                            <select id="materialStandard" class="form-input" required>
+                                <option value="">Select</option>
+                                <option value="balvatika">બાલ વાટિકા</option>
+                                <option value="1">ધોરણ 1</option>
+                                <option value="2">ધોરણ 2</option>
+                                <option value="3">ધોરણ 3</option>
+                                <option value="4">ધોરણ 4</option>
+                                <option value="5">ધોરણ 5</option>
+                                <option value="6">ધોરણ 6</option>
+                                <option value="7">ધોરણ 7</option>
+                                <option value="8">ધોરણ 8</option>
+                                <option value="9">ધોરણ 9</option>
+                                <option value="10">ધોરણ 10</option>
+                                <option value="11">ધોરણ 11</option>
+                                <option value="12">ધોરણ 12</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Material Type *</label>
+                            <select id="materialType" class="form-input" required>
+                                <option value="textbook">પાઠ્યપુસ્તક</option>
+                                <option value="workbook">સ્વાધ્યાયપોથી</option>
+                                <option value="testpaper">ટેસ્ટ પેપર</option>
+                                <option value="solution">સોલ્યુશન</option>
+                                <option value="notes">નોંધ</option>
+                                <option value="other">અન્ય</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Subject *</label>
+                            <input type="text" id="materialSubject" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Title *</label>
+                            <input type="text" id="materialTitle" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Google Drive Link *</label>
+                            <input type="url" id="materialLink" class="form-input" 
+                                   placeholder="https://drive.google.com/..." required>
+                        </div>
+                        <button type="submit" class="btn-primary">Add Material</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Games Tab -->
+            <div id="gamesTab" class="tab-content">
+                <h2>Upload Games (HTML Files)</h2>
+                <div class="admin-card">
+                    <h3>Upload Game</h3>
+                    <form id="gameUploadForm">
+                        <div class="form-group">
+                            <label>Subject *</label>
+                            <input type="text" id="gameSubject" class="form-input" 
+                                   placeholder="ગુજરાતી, અંગ્રેજી, ગણિત..." required>
+                        </div>
+                        <div class="form-group">
+                            <label>Game Title *</label>
+                            <input type="text" id="gameTitle" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label>HTML File *</label>
+                            <input type="file" id="gameFile" class="form-input" accept=".html" required>
+                        </div>
+                        <button type="submit" class="btn-primary">Upload Game</button>
+                    </form>
+                    <div class="upload-note">
+                        <strong>Note:</strong> Game will be categorized by subject automatically
+                    </div>
+                </div>
+            </div>
+
+            <!-- Settings Tab -->
+            <div id="settingsTab" class="tab-content">
+                <h2>Website Settings</h2>
+                <div class="admin-card">
+                    <h3>Logo & Branding</h3>
+                    <form id="settingsForm">
+                        <div class="form-group">
+                            <label>Site Logo URL</label>
+                            <input type="url" id="logoUrl" class="form-input">
+                        </div>
+                        <div class="form-group">
+                            <label>Favicon URL</label>
+                            <input type="url" id="faviconUrl" class="form-input">
+                        </div>
+                        <div class="form-group">
+                            <label>Site Title</label>
+                            <input type="text" id="siteTitle" class="form-input" 
+                                   value="Online Education Guru">
+                        </div>
+                        <button type="submit" class="btn-primary">Save Settings</button>
+                    </form>
+                </div>
+
+                <div class="admin-card">
+                    <h3>Google Sheets Configuration</h3>
+                    <div class="config-info">
+                        <p><strong>Spreadsheet ID:</strong> <code id="spreadsheetId">Configure in code.gs</code></p>
+                        <p><strong>Web App URL:</strong> <code id="webAppUrl">Deploy from Google Apps Script</code></p>
+                    </div>
+                    <a href="https://script.google.com" target="_blank" class="btn-secondary">
+                        Open Google Apps Script
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="../js/config.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/admin.js"></script>
+</body>
+</html>

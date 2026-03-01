@@ -1,0 +1,21 @@
+# robots.txt for Online Education Guru
+
+User-agent: *
+Allow: /
+
+# Disallow admin pages
+Disallow: /admin/
+Disallow: /pages/admin-panel.html
+
+# Disallow login/register pages from indexing
+Disallow: /pages/login.html
+Disallow: /pages/register.html
+
+# Allow all public pages
+Allow: /pages/
+Allow: /css/
+Allow: /js/
+Allow: /images/
+
+# Sitemap location
+Sitemap: https://yourdomain.com/sitemap.xml

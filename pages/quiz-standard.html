@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ધોરણ વાઈઝ Quiz - Online Education Guru</title>
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/quiz.css">
+</head>
+<body>
+    <!-- Header -->
+    <header id="mainHeader">
+        <div class="container">
+            <div class="logo-container">
+                <img src="../images/logo.png" alt="Online Education Guru Logo" class="logo">
+                <h1 class="site-title">Online Education Guru</h1>
+            </div>
+            <nav class="main-nav">
+                <button class="nav-toggle" id="navToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="../index.html" class="nav-link">હોમ</a></li>
+                    <li><a href="about.html" class="nav-link">અમારા વિશે</a></li>
+                    <li><a href="contact.html" class="nav-link">સંપર્ક</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="quiz-main">
+        <div class="container">
+            <div class="page-header">
+                <h1 class="page-title">📚 ધોરણ વાઈઝ Quiz</h1>
+                <p class="page-subtitle">તમારા જ્ઞાનની કસોટી કરો</p>
+            </div>
+
+            <!-- Quiz Selection Form -->
+            <div id="quizSelectionSection" class="quiz-selection-card">
+                <h2>Quiz પસંદ કરો</h2>
+                
+                <form id="quizSelectionForm" class="quiz-form">
+                    <div class="form-group">
+                        <label for="standard">ધોરણ *</label>
+                        <select id="standard" name="standard" class="form-input" required>
+                            <option value="">ધોરણ પસંદ કરો</option>
+                            <option value="1">ધોરણ 1</option>
+                            <option value="2">ધોરણ 2</option>
+                            <option value="3">ધોરણ 3</option>
+                            <option value="4">ધોરણ 4</option>
+                            <option value="5">ધોરણ 5</option>
+                            <option value="6">ધોરણ 6</option>
+                            <option value="7">ધોરણ 7</option>
+                            <option value="8">ધોરણ 8</option>
+                            <option value="9">ધોરણ 9</option>
+                            <option value="10">ધોરણ 10</option>
+                            <option value="11">ધોરણ 11</option>
+                            <option value="12">ધોરણ 12</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">વિષય *</label>
+                        <select id="subject" name="subject" class="form-input" required>
+                            <option value="">પહેલા ધોરણ પસંદ કરો</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="chapter">પ્રકરણ (વૈકલ્પિક)</label>
+                        <select id="chapter" name="chapter" class="form-input">
+                            <option value="">બધા પ્રકરણ</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="questionCount">પ્રશ્નોની સંખ્યા *</label>
+                        <select id="questionCount" name="questionCount" class="form-input" required>
+                            <option value="10">10 પ્રશ્નો</option>
+                            <option value="20" selected>20 પ્રશ્નો</option>
+                            <option value="25">25 પ્રશ્નો</option>
+                            <option value="30">30 પ્રશ્નો</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" class="btn-primary btn-block">
+                            🚀 Quiz શરૂ કરો
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Student Info Form -->
+            <div id="studentInfoSection" style="display: none;" class="quiz-selection-card">
+                <h2>તમારી માહિતી દાખલ કરો</h2>
+                
+                <form id="studentInfoForm" class="quiz-form">
+                    <div class="form-group">
+                        <label for="studentName">નામ *</label>
+                        <input type="text" id="studentName" name="studentName" class="form-input" 
+                               placeholder="તમારું પૂરું નામ" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="studentMobile">મોબાઈલ નંબર *</label>
+                        <input type="tel" id="studentMobile" name="studentMobile" class="form-input" 
+                               placeholder="10 અંકનો મોબાઈલ નંબર" maxlength="10" required>
+                        <span class="error-text" id="mobileError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" class="btn-primary btn-block">
+                            ▶️ આગળ વધો
+                        </button>
+                        <button type="button" class="btn-secondary btn-block" onclick="showQuizSelection()">
+                            ⬅️ પાછા જાઓ
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Quiz Interface -->
+            <div id="quizInterface" style="display: none;">
+                <div class="quiz-container">
+                    <!-- Quiz Header -->
+                    <div class="quiz-header">
+                        <div class="quiz-info">
+                            <h3 id="quizTitle">Quiz</h3>
+                            <p id="quizMeta">ધોરણ | વિષય</p>
+                        </div>
+                        <div class="quiz-timer">
+                            <div class="timer-icon">⏱️</div>
+                            <div class="timer-display" id="timerDisplay">00:00</div>
+                        </div>
+                    </div>
+
+                    <!-- Progress Bar -->
+                    <div class="quiz-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progressFill"></div>
+                        </div>
+                        <div class="progress-text" id="progressText">પ્રશ્ન 1 / 10</div>
+                    </div>
+
+                    <!-- Question Card -->
+                    <div class="question-card" id="questionCard">
+                        <div class="question-number" id="questionNumber">પ્રશ્ન 1</div>
+                        <div class="question-text" id="questionText">પ્રશ્ન લોડ થઈ રહ્યો છે...</div>
+                        
+                        <div class="options-container" id="optionsContainer">
+                            <!-- Options will be inserted here -->
+                        </div>
+                    </div>
+
+                    <!-- Quiz Navigation -->
+                    <div class="quiz-navigation">
+                        <button class="btn-nav btn-prev" id="btnPrev" onclick="previousQuestion()" disabled>
+                            ⬅️ પહેલાનો પ્રશ્ન
+                        </button>
+                        <button class="btn-nav btn-next" id="btnNext" onclick="nextQuestion()">
+                            આગળનો પ્રશ્ન ➡️
+                        </button>
+                        <button class="btn-nav btn-submit" id="btnSubmit" onclick="submitQuiz()" style="display: none;">
+                            ✅ Submit કરો
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Result Section -->
+            <div id="resultSection" style="display: none;">
+                <div class="result-card">
+                    <div class="result-header">
+                        <div class="result-icon" id="resultIcon">🎉</div>
+                        <h2 id="resultTitle">અભિનંદન!</h2>
+                        <p id="resultSubtitle">તમે Quiz પૂર્ણ કરી</p>
+                    </div>
+
+                    <div class="result-stats">
+                        <div class="stat-item">
+                            <div class="stat-value" id="scoreValue">0</div>
+                            <div class="stat-label">સ્કોર</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" id="percentageValue">0%</div>
+                            <div class="stat-label">ટકાવારી</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" id="timeValue">00:00</div>
+                            <div class="stat-label">સમય</div>
+                        </div>
+                    </div>
+
+                    <div class="result-breakdown">
+                        <div class="breakdown-item correct">
+                            <span class="breakdown-icon">✅</span>
+                            <span class="breakdown-label">સાચા જવાબ:</span>
+                            <span class="breakdown-value" id="correctCount">0</span>
+                        </div>
+                        <div class="breakdown-item wrong">
+                            <span class="breakdown-icon">❌</span>
+                            <span class="breakdown-label">ખોટા જવાબ:</span>
+                            <span class="breakdown-value" id="wrongCount">0</span>
+                        </div>
+                        <div class="breakdown-item unanswered">
+                            <span class="breakdown-icon">⭕</span>
+                            <span class="breakdown-label">અનુત્તરિત:</span>
+                            <span class="breakdown-value" id="unansweredCount">0</span>
+                        </div>
+                    </div>
+
+                    <div class="certificate-section">
+                        <h3>🏆 તમારું સર્ટિફિકેટ</h3>
+                        <div class="certificate-preview" id="certificatePreview">
+                            <canvas id="certificateCanvas" width="800" height="600"></canvas>
+                        </div>
+                        
+                        <div class="certificate-actions">
+                            <button class="btn-download-cert" onclick="downloadCertificate('pdf')">
+                                📄 PDF ડાઉનલોડ કરો
+                            </button>
+                            <button class="btn-download-cert" onclick="downloadCertificate('png')">
+                                🖼️ PNG ડાઉનલોડ કરો
+                            </button>
+                            <button class="btn-share-cert" onclick="shareCertificate()">
+                                📤 WhatsApp પર શેર કરો
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="result-actions">
+                        <button class="btn-primary" onclick="retakeQuiz()">
+                            🔄 ફરીથી Quiz આપો
+                        </button>
+                        <button class="btn-secondary" onclick="goHome()">
+                            🏠 હોમ પેજ પર જાઓ
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer id="mainFooter">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2024 Online Education Guru. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../js/config.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/quiz.js"></script>
+</body>
+</html>

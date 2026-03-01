@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>રજિસ્ટ્રેશન - Online Education Guru</title>
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/auth.css">
+</head>
+<body>
+    <!-- Header -->
+    <header id="mainHeader">
+        <div class="container">
+            <div class="logo-container">
+                <img src="../images/logo.png" alt="Online Education Guru Logo" class="logo">
+                <h1 class="site-title">Online Education Guru</h1>
+            </div>
+            <nav class="main-nav">
+                <button class="nav-toggle" id="navToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="../index.html" class="nav-link">હોમ</a></li>
+                    <li><a href="about.html" class="nav-link">અમારા વિશે</a></li>
+                    <li><a href="contact.html" class="nav-link">સંપર્ક</a></li>
+                    <li><a href="login.html" class="nav-link">લોગિન</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="auth-main">
+        <div class="container">
+            <div class="auth-container">
+                <div class="auth-card">
+                    <h2 class="auth-title">રજિસ્ટ્રેશન</h2>
+                    <p class="auth-subtitle">નવું એકાઉન્ટ બનાવો</p>
+
+                    <!-- User Type Selection -->
+                    <div class="user-type-selector">
+                        <button class="type-btn active" data-type="student" onclick="selectUserType('student')">
+                            👨‍🎓 વિદ્યાર્થી
+                        </button>
+                        <button class="type-btn" data-type="teacher" onclick="selectUserType('teacher')">
+                            👨‍🏫 શિક્ષક
+                        </button>
+                    </div>
+
+                    <!-- Registration Form -->
+                    <form id="registerForm" class="auth-form">
+                        <input type="hidden" id="userType" value="student">
+
+                        <!-- Common Fields -->
+                        <div class="form-group">
+                            <label for="name">નામ *</label>
+                            <input type="text" id="name" name="name" class="form-input" 
+                                   placeholder="તમારું પૂરું નામ" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="school">શાળાનું નામ *</label>
+                            <input type="text" id="school" name="school" class="form-input" 
+                                   placeholder="શાળાનું નામ" required>
+                        </div>
+
+                        <!-- Teacher Only Fields -->
+                        <div id="teacherFields" style="display: none;">
+                            <div class="form-group">
+                                <label for="diasCode">શાળાનો ડાયસ કોડ *</label>
+                                <input type="text" id="diasCode" name="diasCode" class="form-input" 
+                                       placeholder="DISE કોડ">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">ઈમેલ એડ્રેસ *</label>
+                                <input type="email" id="email" name="email" class="form-input" 
+                                       placeholder="example@gmail.com">
+                                <span class="error-text" id="emailError"></span>
+                            </div>
+                        </div>
+
+                        <!-- Student Only Fields -->
+                        <div id="studentFields">
+                            <div class="form-group">
+                                <label for="standard">ધોરણ</label>
+                                <select id="standard" name="standard" class="form-input">
+                                    <option value="">ધોરણ પસંદ કરો</option>
+                                    <option value="balvatika">બાલ વાટિકા</option>
+                                    <option value="1">ધોરણ 1</option>
+                                    <option value="2">ધોરણ 2</option>
+                                    <option value="3">ધોરણ 3</option>
+                                    <option value="4">ધોરણ 4</option>
+                                    <option value="5">ધોરણ 5</option>
+                                    <option value="6">ધોરણ 6</option>
+                                    <option value="7">ધોરણ 7</option>
+                                    <option value="8">ધોરણ 8</option>
+                                    <option value="9">ધોરણ 9</option>
+                                    <option value="10">ધોરણ 10</option>
+                                    <option value="11">ધોરણ 11</option>
+                                    <option value="12">ધોરણ 12</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="mobile">મોબાઈલ નંબર *</label>
+                            <input type="tel" id="mobile" name="mobile" class="form-input" 
+                                   placeholder="10 અંકનો મોબાઈલ નંબર" maxlength="10" required>
+                            <span class="error-text" id="mobileError"></span>
+                        </div>
+
+                        <!-- OTP Verification (Teacher Only) -->
+                        <div id="otpSection" style="display: none;">
+                            <div class="form-group">
+                                <label for="otp">OTP *</label>
+                                <input type="text" id="otp" name="otp" class="form-input" 
+                                       placeholder="ઈમેલ પર મોકલેલ OTP" maxlength="6">
+                                <button type="button" class="btn-link" onclick="resendOTP()">
+                                    OTP ફરીથી મોકલો
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="terms" required>
+                                હું <a href="terms.html" target="_blank">ટર્મ્સ અને કંડીશન્સ</a> સ્વીકારું છું
+                            </label>
+                        </div>
+
+                        <div class="form-group">
+                            <button type="submit" class="btn-primary btn-block" id="registerBtn">
+                                <span class="btn-text">રજિસ્ટર કરો</span>
+                                <span class="btn-loader" style="display: none;">⏳</span>
+                            </button>
+                        </div>
+
+                        <div class="form-footer">
+                            <p>પહેલેથી એકાઉન્ટ છે? <a href="login.html">લોગિન કરો</a></p>
+                        </div>
+                    </form>
+
+                    <!-- Message Display -->
+                    <div id="messageContainer"></div>
+                </div>
+
+                <!-- Info Section -->
+                <div class="auth-info">
+                    <div class="info-card">
+                        <h3>📝 રજિસ્ટ્રેશન માહિતી</h3>
+                        <ul>
+                            <li>✓ વિદ્યાર્થીઓ માટે સિંપલ રજિસ્ટ્રેશન</li>
+                            <li>✓ શિક્ષકો માટે ઈમેલ વેરિફિકેશન</li>
+                            <li>✓ સુરક્ષિત અને ઝડપી પ્રક્રિયા</li>
+                            <li>✓ મફત સેવાઓ</li>
+                        </ul>
+                    </div>
+                    <div class="info-card alert-info">
+                        <h3>⚠️ નોંધ</h3>
+                        <p><strong>શિક્ષકો:</strong> રજિસ્ટ્રેશન પછી તમારા ઈમેલ પર OTP મોકલવામાં આવશે. વેરિફિકેશન પછી જ લોગિન કરી શકશો.</p>
+                        <p><strong>વિદ્યાર્થીઓ:</strong> તમે તરત જ લોગિન કરી શકશો.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer id="mainFooter">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Online Education Guru</h4>
+                    <p>ગુજરાત શિક્ષણ માટે સંપૂર્ણ ડિજિટલ સમાધાન</p>
+                </div>
+                <div class="footer-section">
+                    <h4>લિંક્સ</h4>
+                    <ul>
+                        <li><a href="about.html">અમારા વિશે</a></li>
+                        <li><a href="contact.html">સંપર્ક</a></li>
+                        <li><a href="privacy.html">પ્રાઇવસી પોલિસી</a></li>
+                        <li><a href="terms.html">ટર્મ્સ ઓફ સર્વિસ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Online Education Guru. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../js/config.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/auth.js"></script>
+</body>
+</html>
